@@ -1,0 +1,7 @@
+bin/
+obj/
+pub/
+ffmpeg/
+config.json
+matrix.gif
+matrix.mp4
