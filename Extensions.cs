@@ -23,17 +23,15 @@ public static class Extensions
 
     public static T LoopedIndex<T>(this T[] array, int index)
     {
-        // If the index is negative, loop back to the end of the array
-        if (index < 0)
+        // Calculate the effective index by taking the modulo of the input index with the array length
+        int effectiveIndex = index % array.Length;
+
+        // If the effective index is negative, add the array length to it
+        if (effectiveIndex < 0)
         {
-            return array[array.Length + index];
-        }
-        // If the index is greater than the length of the array, loop back to the start of the array
-        if (index >= array.Length)
-        {
-            return array[index - array.Length];
+            effectiveIndex += array.Length;
         }
 
-        return array[index];
+        return array[effectiveIndex];
     }
 }

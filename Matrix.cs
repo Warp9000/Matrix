@@ -90,7 +90,7 @@ public class Matrix
         List<Image<Rgba32>> frames = new();
         int frameCount = FPS * Length;
 
-        int preFrames = FadeSpeed * 2;
+        int preFrames = FadeSpeed * 2 + Rows;
 
         for (int i = -preFrames; i < 0; i++)
         {
